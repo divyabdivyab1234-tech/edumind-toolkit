@@ -28,13 +28,18 @@ const allowedOrigins = [
 ].filter(Boolean);
 
 // ✅ Updated CORS configuration
-app.use(cors({
-  origin: true, // This automatically mirrors the requesting frontend url (Vercel)
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
-
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://edumind-toolkit-yoy9.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Credentials", "true");
+  
+  // Instantly respond to the browser's preflight check
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 // ADDED BACK: This line is required to parse JSON request bodies sent from your frontend React app
 app.use(express.json());
 
