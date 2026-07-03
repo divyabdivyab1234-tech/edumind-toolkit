@@ -1,0 +1,23 @@
+.keypoints {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.keypoints li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.keypoints-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+  text-align: left;
+}
+
+.keypoints-box h3 {
+  margin-bottom: 10px;
+}

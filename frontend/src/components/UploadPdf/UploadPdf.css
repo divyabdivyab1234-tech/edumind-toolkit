@@ -1,0 +1,39 @@
+.pdf-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px;
+}
+
+.pdf-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.upload-box {
+  max-width: 420px;
+  margin: auto;
+  text-align: center;
+}
+
+.upload-box input {
+  margin-bottom: 20px;
+}
+
+.upload-box button {
+  width: 100%;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}

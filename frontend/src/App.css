@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  --bg: linear-gradient(135deg, #f8fafc, #498ccf);
+  --card-bg: #c3c2c2;
+  --text: #020617;
+  --subtext: #475569;
+  --nav-bg: #0f172a;
+  --btn-bg: #1e293b;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #020617, #020617);
+  --card-bg: #0f172a;
+  --text: #e5e7eb;
+  --subtext: #94a3b8;
+  --nav-bg: #020617;
+  --btn-bg: #1e293b;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #0f172a;
+  color: white;
+}
+
+.navbar h2 {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.navbar .btn {
+  margin-left: 10px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #1e293b;
+  color: white;
+  transition: 0.3s;
+}
+
+.navbar .btn:hover {
+  background: #334155;
+}
+
+.navbar .btn.primary {
+  background: #38bdf8;
+  color: #020617;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  gap: 25px; /* Space between logo and text */
+  max-width: 900px;
+}
+
+.hero-logo {
+  width: 120px; /* Adjust based on how big you want it */
+  height: auto;
+  /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
+}
+
+.hero-text {
+  text-align: left; /* Makes the heading and subtext align nicely */
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.hero-text p {
+  margin: 5px 0 0 0;
+  font-size: 1.2rem;
+  color: #4b5563;
+}
+
+/* Mobile Responsive: Stack them on small screens */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text {
+    text-align: center;
+  }
+}
+
+.hero h1 {
+  font-size: 46px;
+  font-weight: 700;
+ 
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #475569;
+}
+
+/* ---------- FEATURES ---------- */
+.features {
+  display: grid;
+ grid-template-columns: repeat(3, 1fr); 
+  /* Force exactly 2 rows */
+  grid-template-rows: repeat(2, auto);
+  padding: 40px;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background: white;
+  padding: 50px 50px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #020617;
+}
+
+.card p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.card-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-btn:hover {
+  background: #1e293b;
+}
+
+/* ---------- PAGE HEADERS ---------- */
+.page-title {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 32px;
+  color: #020617;
+}
+/* ---------- PREMIUM ANIMATIONS ---------- */
+
+/* Smooth page fade */
+@keyframes pageFade {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero,
+.page-title {
+  animation: pageFade 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Staggered cards */
+.features .card {
+  opacity: 0;
+  animation: cardRise 0.6s ease forwards;
+}
+
+.features .card:nth-child(1) { animation-delay: 0.1s; }
+.features .card:nth-child(2) { animation-delay: 0.2s; }
+.features .card:nth-child(3) { animation-delay: 0.3s; }
+.features .card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card hover polish */
+.card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Button interaction */
+.card-btn,
+.navbar .btn {
+  transition: all 0.25s ease;
+}
+
+.card-btn:hover,
+.navbar .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.card-btn:active,
+.navbar .btn:active {
+  transform: scale(0.95);
+}
+
+/* Navbar entrance */
+@keyframes navDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  animation: navDrop 0.6s ease-out;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+/* ---------- MICRO INTERACTIONS ---------- */
+
+/* Soft glow on hover */
+.card-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-btn:hover::after {
+  opacity: 1;
+}
+
+/* Make buttons relative */
+.card-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card press feedback */
+.card:active {
+  transform: scale(0.98);
+}
+
+/* Input focus animation (future login / pdf forms) */
+input,
+textarea {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}
+
+/* Loading pulse (reusable) */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.loading {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+/* Subtle tap feedback for mobile */
+button {
+  -webkit-tap-highlight-color: transparent;
+}

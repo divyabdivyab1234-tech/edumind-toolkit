@@ -1,0 +1,152 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: #0f172a; /* Solid dark professional blue */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-right: 40px; /* Space between Logo and Links */
+}
+
+/* Fix for the bunched-up text in your screenshot */
+.nav-links {
+  display: flex;
+  gap: 30px; /* Adds physical space between each tool link */
+}
+
+.nav-link {
+  color: #94a3b8;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: #6366f1;
+}
+
+.nav-right {
+  gap: 20px;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* User Profile Styling */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px 12px 5px 5px;
+  border-radius: 30px;
+  gap: 10px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background: #6366f1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.name-text {
+  color: #f1f5f9;
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.logout-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+/* Container for the right side items */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* The New Sleek Login Button */
+.login-btn {
+  background: rgba(99, 102, 241, 0.1); /* Subtle indigo tint */
+  color: #818cf8; /* Light indigo text */
+  border: 1px solid rgba(99, 102, 241, 0.5); /* Semi-transparent border */
+  padding: 8px 22px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.login-btn:hover {
+  background: #6366f1; /* Solid indigo on hover */
+  color: white;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4); /* Glow effect */
+  transform: translateY(-1px);
+}
+
+/* The Theme Toggle (Moon/Sun) */
+.theme-btn {
+  background: #1e293b;
+  border: 1px solid #334155;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.2s;
+}
+
+.theme-btn:hover {
+  background: #334155;
+}
+.hero-logo {
+  width: 120px; /* Adjust based on how big you want it */
+  height: auto;
+  /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
+}
