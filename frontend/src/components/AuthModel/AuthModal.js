@@ -12,7 +12,7 @@ const AuthModal = ({ isOpen, onClose }) => {
 
  const handleSubmit = async (e) => {
   e.preventDefault();
-  const url = isLogin ? "http://localhost:5000/api/auth/login" : "http://localhost:5000/api/auth/register";
+  const url = isLogin ? "https://edumind-toolkit.onrender.com/api/auth/login" : "https://edumind-toolkit.onrender.com/api/auth/register";
   
   try {
     const res = await axios.post(url, formData);

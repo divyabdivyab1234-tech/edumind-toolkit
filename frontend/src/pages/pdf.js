@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./Pdf.css";
 
@@ -35,7 +35,7 @@ export default function Pdf() {
     setKeyPoints([]);
 
     const res = await axios.post(
-      "http://localhost:5000/api/pdf/keypoints",
+     "https://edumind-toolkit.onrender.com/api/pdf/keypoints",
       formData,
       {
         headers: {

@@ -11,7 +11,7 @@ export default function CodeExplainer() {
     if (!code) return alert("Please paste some code!");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/code/explain", { code, language });
+      const res = await axios.post("https://edumind-toolkit.onrender.com/api/code/explain", { code, language });
       setResult(res.data.explanation);
     } catch (err) {
       alert("Analysis failed. Check backend.");

@@ -13,7 +13,7 @@ const [showSuccess, setShowSuccess] = useState(false);
     if (!topic) return;
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/roadmap/generate", { topic });
+      const res = await axios.post("https://edumind-toolkit.onrender.com/api/roadmap/generate", { topic });
       setSteps(res.data.roadmap);
       setCompletedIds([]); 
     } catch (err) {

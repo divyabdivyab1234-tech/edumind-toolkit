@@ -20,7 +20,7 @@ const QuizGenerator = () => {
     setData(null);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/quiz/generate", formData);
+      const res = await axios.post("https://edumind-toolkit.onrender.com/api/quiz/generate", formData);
       setData(res.data);
       setSelectedAnswers({});
     } catch (err) {
