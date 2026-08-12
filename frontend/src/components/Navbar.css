@@ -150,62 +150,66 @@
   height: auto;
   /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
 }
-/* ---------- MODERN MOBILE NAVBAR ---------- */
-/* ---------- BALANCED MOBILE NAVBAR ---------- */
+/* ---------- ACCENTUATED MOBILE NAVBAR FIX ---------- */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    padding: 12px 16px;
-    gap: 12px;
+    padding: 10px 12px;
+    gap: 10px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Top Row: Logo on left, User & Theme controls on right */
+  /* Top Row: Logo flush to the left corner */
   .nav-left {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
   }
 
   .logo {
-    margin-right: 0;
-    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
   }
 
-  .nav-right {
-    width: auto;
-    border-top: none;
-    padding-top: 0;
-    gap: 8px;
-  }
-
-  /* Hide username text on mobile to keep profile badge compact */
-  .name-text {
-    display: none;
-  }
-
-  /* Bottom Row: Full-width 2-column grid for links */
   .nav-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    width: 100%;
+    gap: 6px;
   }
 
   .nav-link {
-    font-size: 0.8rem;
-    padding: 8px 10px;
+    font-size: 0.72rem;
+    padding: 5px 8px;
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
     text-align: center;
     white-space: nowrap;
   }
 
-  /* Centers the 5th button across both columns */
-  .nav-link:last-child {
-    grid-column: span 2;
+  /* Bottom Row: Pull controls together on the right to eliminate empty space */
+  .nav-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Groups theme button, user badge, and logout together */
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 8px;
+  }
+
+  .user-badge {
+    padding: 4px 8px;
+  }
+
+  .name-text {
+    font-size: 0.8rem;
   }
 }
