@@ -150,7 +150,7 @@
   height: auto;
   /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
 }
-/* ---------- PUSH LOGO TO FAR-LEFT CORNER ---------- */
+/* ---------- ACCENTUATED MOBILE NAVBAR FIX ---------- */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -168,17 +168,17 @@
     align-items: center;
     gap: 8px;
   }
+
   .logo {
     margin: 0;
     padding: 0;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
-    gap: 1px;
+    gap: 6px;
     flex-shrink: 0;
   }
 
-  /* Keeps the 2-column links grid on the right */
   .nav-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -187,21 +187,29 @@
 
   .nav-link {
     font-size: 0.72rem;
-    padding: 5px 6px;
+    padding: 5px 8px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 6px;
     text-align: center;
     white-space: nowrap;
   }
 
-  /* Keeps user controls on the bottom row as shown in screenshot */
+  /* Bottom Row: Pull controls together on the right to eliminate empty space */
   .nav-right {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end; /* Groups theme button, user badge, and logout together */
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 6px;
+    padding-top: 8px;
+  }
+
+  .user-badge {
+    padding: 4px 8px;
+  }
+
+  .name-text {
+    font-size: 0.8rem;
   }
 }
