@@ -150,35 +150,37 @@
   height: auto;
   /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
 }
-/* ---------- ACCENTUATED MOBILE NAVBAR FIX ---------- */
+/* ---------- FLUSH TOP-LEFT LOGO FIX ---------- */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    padding: 10px 12px;
-    gap: 10px;
+    padding: 8px 10px 8px 4px; /* Reduced left padding pushes logo to the edge */
+    gap: 8px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Top Row: Logo flush to the left corner */
+  /* Top Row: Logo pushed flush left */
   .nav-left {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    padding: 0;
+    margin: 0;
   }
 
   .logo {
     margin: 0;
-    padding: 0;
+    padding-left: 0;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     flex-shrink: 0;
   }
 
+  /* 2-Column Tool Grid */
   .nav-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -187,29 +189,21 @@
 
   .nav-link {
     font-size: 0.72rem;
-    padding: 5px 8px;
+    padding: 5px 6px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 6px;
     text-align: center;
     white-space: nowrap;
   }
 
-  /* Bottom Row: Pull controls together on the right to eliminate empty space */
+  /* User Controls aligned right */
   .nav-right {
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* Groups theme button, user badge, and logout together */
+    justify-content: flex-end;
     align-items: center;
     gap: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 8px;
-  }
-
-  .user-badge {
-    padding: 4px 8px;
-  }
-
-  .name-text {
-    font-size: 0.8rem;
+    padding-top: 6px;
   }
 }
