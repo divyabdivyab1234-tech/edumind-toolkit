@@ -150,57 +150,73 @@
   height: auto;
   /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
 }
-/* ---------- MOBILE RESPONSIVE NAVBAR FIX ---------- */
+/* ---------- MODERN MOBILE NAVBAR ---------- */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 12px 16px;
-    gap: 12px;
   }
 
-  /* Split Logo to the left */
+  /* Lets children act as direct navbar items */
   .nav-left {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    display: contents;
   }
 
+  /* Top Row - Left: Logo */
   .logo {
+    order: 1;
     margin-right: 0;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
-  /* Convert links into a smooth left-to-right swipeable pill menu */
+  /* Top Row - Right: Profile / Theme / Logout */
+  .nav-right {
+    order: 2;
+    gap: 8px;
+  }
+
+  .login-btn,
+  .logout-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .user-badge {
+    padding: 2px 8px;
+  }
+
+  .name-text {
+    font-size: 0.8rem;
+  }
+
+  /* Bottom Row: Clean horizontal pill bar for tools */
   .nav-links {
+    order: 3;
     width: 100%;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
-    gap: 10px;
-    padding-bottom: 4px;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
+    gap: 8px;
+    padding: 10px 0 2px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 8px;
+    scrollbar-width: none;
   }
 
   .nav-links::-webkit-scrollbar {
-    display: none; /* Hide scrollbar Chrome/Safari */
+    display: none;
   }
 
   .nav-link {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     background: rgba(255, 255, 255, 0.08);
     padding: 6px 14px;
     border-radius: 20px;
-    flex-shrink: 0; /* Keeps pills from squishing */
-  }
-
-  /* User controls centered */
-  .nav-right {
-    width: 100%;
-    justify-content: space-between;
-    gap: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 10px;
+    flex-shrink: 0;
+    color: #cbd5e1;
   }
 }
