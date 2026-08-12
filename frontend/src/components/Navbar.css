@@ -150,3 +150,45 @@
   height: auto;
   /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
 }
+/* ---------- MOBILE RESPONSIVE NAVBAR ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-right: 0;
+    font-size: 1.25rem;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .nav-right {
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .user-badge {
+    padding: 4px 8px;
+  }
+
+  .name-text {
+    font-size: 0.8rem;
+  }
+}
