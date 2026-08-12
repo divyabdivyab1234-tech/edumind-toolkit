@@ -150,45 +150,57 @@
   height: auto;
   /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
 }
-/* ---------- MOBILE RESPONSIVE NAVBAR ---------- */
+/* ---------- MOBILE RESPONSIVE NAVBAR FIX ---------- */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.8rem 1rem;
     flex-direction: column;
+    padding: 12px 16px;
     gap: 12px;
   }
 
+  /* Split Logo to the left */
   .nav-left {
     width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .logo {
     margin-right: 0;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
 
+  /* Convert links into a smooth left-to-right swipeable pill menu */
   .nav-links {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    padding-bottom: 4px;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
   }
 
   .nav-link {
     font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 14px;
+    border-radius: 20px;
+    flex-shrink: 0; /* Keeps pills from squishing */
   }
 
+  /* User controls centered */
   .nav-right {
-    gap: 10px;
     width: 100%;
-    justify-content: center;
-  }
-
-  .user-badge {
-    padding: 4px 8px;
-  }
-
-  .name-text {
-    font-size: 0.8rem;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
   }
 }
