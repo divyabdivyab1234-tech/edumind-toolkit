@@ -150,37 +150,36 @@
   height: auto;
   /* Optional: filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); */
 }
-/* ---------- FLUSH TOP-LEFT LOGO FIX ---------- */
+/* ---------- PUSH LOGO TO FAR-LEFT CORNER ---------- */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    padding: 8px 10px 8px 4px; /* Reduced left padding pushes logo to the edge */
+    padding: 8px 10px 8px 4px; /* Reduced left padding pushes content to the far-left screen edge */
     gap: 8px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Top Row: Logo pushed flush left */
+  /* Keep top row structure: Logo on far left, links grid on right */
   .nav-left {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin: 0;
+    align-items: flex-start;
+    padding-left: 0;
+    margin-left: 0;
   }
 
   .logo {
     margin: 0;
-    padding-left: 0;
-    font-size: 1.1rem;
+    padding: 0;
+    font-size: 1.15rem;
     display: flex;
     align-items: center;
     gap: 4px;
     flex-shrink: 0;
   }
 
-  /* 2-Column Tool Grid */
+  /* Keeps the 2-column links grid on the right */
   .nav-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -196,13 +195,13 @@
     white-space: nowrap;
   }
 
-  /* User Controls aligned right */
+  /* Keeps user controls on the bottom row as shown in screenshot */
   .nav-right {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 6px;
   }
