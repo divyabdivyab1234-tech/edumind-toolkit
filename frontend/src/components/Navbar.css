@@ -42,7 +42,7 @@
 }
 
 .nav-right {
-  gap: 10px;
+  gap: 2px;
 }
 
 .theme-btn {
@@ -103,7 +103,7 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 /* The New Sleek Login Button */
@@ -177,7 +177,7 @@
   .nav-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px 8px;
+    gap: 2px 4px;
   }
 
   .nav-link {
