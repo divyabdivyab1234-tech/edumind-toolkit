@@ -153,29 +153,28 @@
 /* ---------- PUSH LOGO TO FAR-LEFT CORNER ---------- */
 @media (max-width: 768px) {
   .navbar {
-    padding: 8px 10px 8px 4px; /* Reduced left padding pushes content to the far-left screen edge */
-    gap: 8px;
+    flex-direction: column;
+    padding: 10px 12px;
+    gap: 10px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Keep top row structure: Logo on far left, links grid on right */
+  /* Top Row: Logo flush to the left corner */
   .nav-left {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding-left: 0;
-    margin-left: 0;
+    align-items: center;
+    gap: 8px;
   }
-
   .logo {
     margin: 0;
     padding: 0;
     font-size: 1.15rem;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 1px;
     flex-shrink: 0;
   }
 
