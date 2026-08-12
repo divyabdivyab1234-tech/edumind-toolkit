@@ -326,3 +326,49 @@ textarea:focus {
 button {
   -webkit-tap-highlight-color: transparent;
 }
+/* ---------- COMPLETE MOBILE RESPONSIVE FIX ---------- */
+@media (max-width: 768px) {
+  /* Fix Navbar spacing */
+  .navbar {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .navbar .btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Fix Hero text size and spacing */
+  .hero {
+    padding: 30px 16px;
+  }
+
+  .hero-text h1, 
+  .hero h1 {
+    font-size: 2rem !important;
+  }
+
+  .hero-text p, 
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-logo {
+    width: 80px;
+  }
+
+  /* Stack features into 1 single column */
+  .features {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  /* Reduce card padding on mobile */
+  .card {
+    padding: 24px 16px;
+  }
+}
